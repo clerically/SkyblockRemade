@@ -1,0 +1,19 @@
+name: Skyblock
+version: 1.0
+author: Clerically
+main: me.clerically.Skyblock.Main
+description: Recreated plugins and functions of Hypixel Skyblock.
+
+commands:
+   menu:
+      description: Opens the Skyblock menu.
+      usage: /<command>
+   profile:
+      description: Opens your Skyblock profile.
+      usage: /<command>
+   skills:
+      description: Opens your Skyblock skills.
+      usage: /<command>
+   collection:
+      description: Opens your Skyblock collection.
+      usage: /<command>
