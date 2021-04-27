@@ -9,12 +9,11 @@ import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.clerically.Skyblock.commands.Menu;
 import me.clerically.Skyblock.commands.Profile;
 import me.clerically.Skyblock.commands.Skills;
 
-public class MenuHandler implements Listener{
-	
+public class SkillsHandler implements Listener {
+
 	@EventHandler
 	public void onMenuClick(InventoryClickEvent event) {
 		Player player = (Player) event.getWhoClicked();
@@ -22,7 +21,7 @@ public class MenuHandler implements Listener{
 		InventoryView menuView = event.getView();
 		String menuTitle = menuView.getTitle();
 		
-		if (menuTitle == "Skyblock Menu") {
+		if (menuTitle == "Your Skills") {
 			event.setCancelled(true);
 			
 			if (event.getCurrentItem() == null) {
@@ -32,17 +31,8 @@ public class MenuHandler implements Listener{
 				ItemStack item = event.getCurrentItem();
 				ItemMeta itemMeta = item.getItemMeta();
 				
-				if (item.getType() == Material.PLAYER_HEAD) {
-					Profile.open(player);
-				}
-				
-				if (item.getType() == Material.DIAMOND_SWORD) {
-					Skills.open(player);
-				}
-				
 				
 			}
-
 		}
 	}
 	

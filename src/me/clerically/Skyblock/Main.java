@@ -7,6 +7,7 @@ import me.clerically.Skyblock.commands.Profile;
 import me.clerically.Skyblock.commands.Skills;
 import me.clerically.Skyblock.listeners.MenuHandler;
 import me.clerically.Skyblock.listeners.ProfileHandler;
+import me.clerically.Skyblock.listeners.SkillsHandler;
 
 public class Main extends JavaPlugin{
 	
@@ -20,6 +21,7 @@ public class Main extends JavaPlugin{
 		// Listeners
 		getServer().getPluginManager().registerEvents(new MenuHandler(), this);
 		getServer().getPluginManager().registerEvents(new ProfileHandler(), this);
+		getServer().getPluginManager().registerEvents(new SkillsHandler(), this);
 	}
 	
 }
