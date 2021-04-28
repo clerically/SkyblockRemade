@@ -12,11 +12,13 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
+import me.clerically.Skyblock.SkyblockUtils;
+
 public class Skills implements CommandExecutor {
 	
 	public static void open(Player player) {
 		Inventory gui = Bukkit.createInventory(player, 54, "Your Skills");
-		Menu.createGuiSpaces(gui);
+		SkyblockUtils.createGuiSpaces(gui);
 		
 		ItemStack playerSkills = new ItemStack(Material.DIAMOND_SWORD, 1);
 		ItemMeta skillsMeta = playerSkills.getItemMeta();

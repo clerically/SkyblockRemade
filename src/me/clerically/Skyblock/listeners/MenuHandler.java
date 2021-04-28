@@ -32,15 +32,37 @@ public class MenuHandler implements Listener{
 				ItemStack item = event.getCurrentItem();
 				ItemMeta itemMeta = item.getItemMeta();
 				
+				// Profile
 				if (item.getType() == Material.PLAYER_HEAD) {
 					Profile.open(player);
 				}
 				
+				// Skills
 				if (item.getType() == Material.DIAMOND_SWORD) {
 					Skills.open(player);
 				}
 				
+				// Collection
 				
+				// Recipe Book
+				
+				// Trades
+				
+				// Quest Log
+				
+				// Calendar
+				
+				// Storage
+				
+				// Active Effects
+				
+				// Pets
+				
+				// Crafting Table
+				
+				// Wardrobe
+				
+				// Personal Bank
 			}
 
 		}

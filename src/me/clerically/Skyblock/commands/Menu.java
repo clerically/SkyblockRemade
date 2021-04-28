@@ -15,18 +15,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
+import me.clerically.Skyblock.SkyblockUtils;
+
 public class Menu implements CommandExecutor {
-	
-	public static void createGuiSpaces(Inventory gui) {
-		for (int i = 0; i < gui.getSize(); i++) {
-			ItemStack blankSpace = new ItemStack(Material.BLACK_STAINED_GLASS_PANE, 1);
-			ItemMeta blankSpaceMeta = blankSpace.getItemMeta();
-			blankSpaceMeta.setDisplayName(" ");
-			blankSpace.setItemMeta(blankSpaceMeta);
-			
-			gui.setItem(i, blankSpace);
-		}
-	}
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -38,7 +29,7 @@ public class Menu implements CommandExecutor {
 			Inventory gui = Bukkit.createInventory(player, 54, "Skyblock Menu");
 			
 			// Create black tiles for spaces not used
-			createGuiSpaces(gui);
+			SkyblockUtils.createGuiSpaces(gui);
 			
 			ItemStack playerProfile = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta playerHeadMeta = (SkullMeta) playerProfile.getItemMeta();
