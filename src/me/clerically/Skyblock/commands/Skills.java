@@ -28,13 +28,17 @@ public class Skills implements CommandExecutor {
 		ItemStack playerSkills = new ItemStack(Material.DIAMOND_SWORD, 1);
 		ItemMeta skillsMeta = playerSkills.getItemMeta();
 		
+		float skillAverage = getSkillAverage(player);
+		String skillAverageString = Float.toString(skillAverage);
+		String skillAverageLoreString = String.format("§6%s Skill Avg. §8(non-cosmetic)", skillAverageString);
+		
 		skillsMeta.setDisplayName("§aYour Skills");
 		
 		ArrayList<String> skillsLore = new ArrayList<String>();
 		skillsLore.add("§7View your Skill progression and");
 		skillsLore.add("§7rewards.");
 		skillsLore.add("");
-		skillsLore.add(String.format("§6%f Skill Avg. §8(non-cosmetic)", getSkillAverage(player)));
+		skillsLore.add(skillAverageLoreString);
 		
 		skillsMeta.setLore(skillsLore);
 		
