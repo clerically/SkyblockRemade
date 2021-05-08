@@ -1,5 +1,7 @@
 package me.clerically.Skyblock.commands;
 
+import java.util.ArrayList;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -23,6 +25,11 @@ public class Skills implements CommandExecutor {
 		ItemStack playerSkills = new ItemStack(Material.DIAMOND_SWORD, 1);
 		ItemMeta skillsMeta = playerSkills.getItemMeta();
 		skillsMeta.setDisplayName("§aYour Skills");
+		ArrayList<String> skillsLore = new ArrayList<String>();
+		skillsLore.add("§7View your Skill progression and");
+		skillsLore.add("§7rewards.");
+		skillsLore.add("");
+		skillsLore.add("§60.0 Skill Avg. §8(non-cosmetic)"); 
 		skillsMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 		playerSkills.setItemMeta(skillsMeta);
 		
