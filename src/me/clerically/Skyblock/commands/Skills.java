@@ -54,6 +54,9 @@ public class Skills implements CommandExecutor {
 		
 		updateHeaderIcon(gui, player);
 		
+		ItemStack skill_Farming = new ItemStack(Material.GOLDEN_HOE, 1);
+		ItemMeta skill_Farming_Meta = skill_Farming.getItemMeta();
+		
 		player.openInventory(gui);
 	}
 	
