@@ -29,7 +29,8 @@ public class Skills implements CommandExecutor {
 		skillsLore.add("§7View your Skill progression and");
 		skillsLore.add("§7rewards.");
 		skillsLore.add("");
-		skillsLore.add("§60.0 Skill Avg. §8(non-cosmetic)"); 
+		skillsLore.add("§60.0 Skill Avg. §8(non-cosmetic)");
+		skillsMeta.setLore(skillsLore);
 		skillsMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 		playerSkills.setItemMeta(skillsMeta);
 		
