@@ -50,7 +50,7 @@ public class Skills implements CommandExecutor {
 	
 	public static void open(Player player) {
 		Inventory gui = Bukkit.createInventory(player, 54, "Your Skills");
-		SkyblockUtils.createGuiSpaces(gui);
+		SkyblockUtils.createGuiSpaces(gui, true);
 		
 		updateHeaderIcon(gui, player);
 		

@@ -29,7 +29,7 @@ public class Menu implements CommandExecutor {
 			Inventory gui = Bukkit.createInventory(player, 54, "Skyblock Menu");
 			
 			// Create black tiles for spaces not used
-			SkyblockUtils.createGuiSpaces(gui);
+			SkyblockUtils.createGuiSpaces(gui, false);
 			
 			ItemStack playerProfile = new ItemStack(Material.PLAYER_HEAD, 1);
 			SkullMeta playerHeadMeta = (SkullMeta) playerProfile.getItemMeta();

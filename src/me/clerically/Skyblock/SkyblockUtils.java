@@ -47,11 +47,17 @@ public final class SkyblockUtils {
 	
 	// Gui things
 	
-	public static void createGuiSpaces(Inventory gui) {
+	public static void createGuiSpaces(Inventory gui, Boolean doIndexNames) {
 		for (int i = 0; i < gui.getSize(); i++) {
 			ItemStack blankSpace = new ItemStack(Material.BLACK_STAINED_GLASS_PANE, 1);
 			ItemMeta blankSpaceMeta = blankSpace.getItemMeta();
-			blankSpaceMeta.setDisplayName(" ");
+			
+			if (doIndexNames) {
+				blankSpaceMeta.setDisplayName(Integer.toString(i));
+			} else {
+				blankSpaceMeta.setDisplayName(" ");
+			}
+			
 			blankSpace.setItemMeta(blankSpaceMeta);
 			
 			gui.setItem(i, blankSpace);

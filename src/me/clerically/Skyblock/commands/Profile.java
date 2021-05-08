@@ -19,7 +19,7 @@ public class Profile implements CommandExecutor {
 	
 	public static void open(Player player) {
 		Inventory gui = Bukkit.createInventory(player, 54, "Your Skyblock Profile");
-		SkyblockUtils.createGuiSpaces(gui);
+		SkyblockUtils.createGuiSpaces(gui, false);
 		
 		ItemStack playerProfile = new ItemStack(Material.PLAYER_HEAD, 1);
 		SkullMeta playerHeadMeta = (SkullMeta) playerProfile.getItemMeta();
