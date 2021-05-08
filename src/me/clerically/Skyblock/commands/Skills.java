@@ -18,23 +18,37 @@ import me.clerically.Skyblock.SkyblockUtils;
 
 public class Skills implements CommandExecutor {
 	
-	public static void open(Player player) {
-		Inventory gui = Bukkit.createInventory(player, 54, "Your Skills");
-		SkyblockUtils.createGuiSpaces(gui);
+	public static float getSkillAverage(Player player) {
+		// TODO: This lol
 		
+		return 0.0f;
+	}
+	
+	private static void updateHeaderIcon(Inventory gui, Player player) {
 		ItemStack playerSkills = new ItemStack(Material.DIAMOND_SWORD, 1);
 		ItemMeta skillsMeta = playerSkills.getItemMeta();
+		
 		skillsMeta.setDisplayName("§aYour Skills");
+		
 		ArrayList<String> skillsLore = new ArrayList<String>();
 		skillsLore.add("§7View your Skill progression and");
 		skillsLore.add("§7rewards.");
 		skillsLore.add("");
-		skillsLore.add("§60.0 Skill Avg. §8(non-cosmetic)"); 
+		skillsLore.add(String.format("§6%f Skill Avg. §8(non-cosmetic)", getSkillAverage(player)));
+		
 		skillsMeta.setLore(skillsLore);
+		
 		skillsMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 		playerSkills.setItemMeta(skillsMeta);
 		
 		gui.setItem(4, playerSkills); // Top center
+	}
+	
+	public static void open(Player player) {
+		Inventory gui = Bukkit.createInventory(player, 54, "Your Skills");
+		SkyblockUtils.createGuiSpaces(gui);
+		
+		updateHeaderIcon(gui, player);
 		
 		player.openInventory(gui);
 	}
